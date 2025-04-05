@@ -86,6 +86,12 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
   disable_password_authentication = false
 
+  os_disk {
+    name                 = "web-os-disk"
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
+
   source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
@@ -102,5 +108,8 @@ resource "azurerm_linux_virtual_machine" "vm" {
     systemctl enable apache2
   EOF
   )
-}
 
+  tags = {
+    environment = "dev"
+  }
+}
