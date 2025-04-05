@@ -62,10 +62,6 @@ bash
 http://<public-ip>
 You should see the default Apache2 Ubuntu page.
 
-📸 Demo Screenshot
-
-
-
 🧼 Destroy Resources
 To clean up:
 
